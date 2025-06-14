@@ -1,7 +1,7 @@
 // rest and default parameter
 /*
 * default parameter: un parametro dentro de la función podría tener un valor asignado al inicio.
-* rest: ...resto tener una cantidad variable de elementos como parametro.
+* rest: [...resto] tener una cantidad variable de elementos como parametro.
 *
 * Ejercicio7: se tiene tres operadores telefónicos se requiere una función que permita según
 * el operador telefónico verificar el tipo de beneficio para la línea del cliente respectivo.
