@@ -1,0 +1,106 @@
+{
+  "platos": [
+    {
+      "id": 1,
+      "nombre": "aji de gallina",
+      "precio": 14.34,
+      "procedencia": "costa",
+      "chefId": 3
+    },
+    {
+      "id": 2,
+      "nombre": "ceviche",
+      "precio": 26.52,
+      "procedencia": "costa",
+      "chefId": 2
+    },
+    {
+      "id": 3,
+      "nombre": "lomo saltado",
+      "precio": 35.34,
+      "procedencia": "costa",
+      "chefId": 4
+    },
+    {
+      "id": 4,
+      "nombre": "arroz chaufa",
+      "precio": 18.34,
+      "procedencia": "costa",
+      "chefId": 1
+    },
+    {
+      "id": 5,
+      "nombre": "pachamanca",
+      "precio": 56.34,
+      "procedencia": "sierra",
+      "chefId": 1
+    },
+    {
+      "id": 6,
+      "nombre": "tacacho con cecina",
+      "precio": 40.34,
+      "procedencia": "selva",
+      "chefId": 4
+    },
+    {
+      "id": 7,
+      "nombre": "patasca",
+      "precio": 27.34,
+      "procedencia": "sierra",
+      "chefId": 3
+    },
+    {
+      "id": 8,
+      "nombre": "juanes",
+      "precio": 28.34,
+      "procedencia": "selva",
+      "chefId": 2
+    },
+    {
+      "id": 9,
+      "nombre": "chaufa regional",
+      "precio": 45.34,
+      "procedencia": "sierra",
+      "chefId": 1
+    },
+    {
+      "id": 10,
+      "nombre": "anticuchos",
+      "precio": 25.34,
+      "procedencia": "costa",
+      "chefId": 1
+    }
+  ],
+  "chefs": [
+    {
+      "id": 1,
+      "nombre": "Milagros Rivas",
+      "edad": 37,
+      "calificacion": 7
+    },
+    {
+      "id": 2,
+      "nombre": "Pablo Lagos",
+      "edad": 25,
+      "calificacion": 8
+    },
+    {
+      "id": 3,
+      "nombre": "Maria Campos",
+      "edad": 39,
+      "calificacion": 9
+    },
+    {
+      "id": 4,
+      "nombre": "Luis Delgado",
+      "edad": 32,
+      "calificacion": 8
+    },
+    {
+      "id": 5,
+      "nombre": "Paolo Polar",
+      "edad": 21,
+      "calificacion": 4
+    }
+  ]
+}
