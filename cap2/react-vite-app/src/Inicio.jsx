@@ -1,9 +1,24 @@
 import AppF from "./AppF.jsx";
 import AppC from "./AppC.jsx";
+import {data} from "./data";
+import Bodega from "./comp/Bodega.jsx";
+import ContadorC from "./comp-estado/ContadorC.jsx";
 
 const Inicio = () => {
+
+    const {frutas} = data;
+
   return (
       <main className={"container mt-3"}>
+          <section className={"row"}>
+              <article className={"col-5 shadow border-2 me-2 rounded-2"}>
+                  <ContadorC/>
+              </article>
+              <article className={"col-6 shadow border-2 me-2 rounded-2"}>
+                  <ContadorC/>
+              </article>
+          </section>
+          <hr/>
           <section className={"row"}>
               <article className={"col col-5 shadow border border-2 me-2 rounded-2"}>
                   <AppF secuencia={1} actividad={"Reunion con el cliente"} avance={100} />
@@ -26,6 +41,15 @@ const Inicio = () => {
                       precio={18.00}
                       descripción={"Aji de cerdo con salsa de tomate"}
                   />
+              </article>
+          </section>
+          <hr/>
+          <section className={"row"}>
+              <article className={"col col-5 shadow border border-2 me-2 rounded-2"}>
+                  <Bodega salida={1} frutas={frutas}/>
+              </article>
+              <article className={"col col-6 shadow border border-2 me-2 rounded-2"}>
+                  <Bodega salida={2} frutas={frutas} />
               </article>
           </section>
       </main>
