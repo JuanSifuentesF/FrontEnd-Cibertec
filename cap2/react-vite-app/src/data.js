@@ -22,12 +22,14 @@ export const data = {
             id: 4,
             nombre: 'uva',
             precio: '3.45',
+            importado: true,
             imagen: "https://images.pexels.com/photos/708777/pexels-photo-708777.jpeg"
         },
         {
             id: 5,
             nombre: 'melon',
             precio: '4.56',
+            importado: true,
             imagen: "https://images.pexels.com/photos/547263/pexels-photo-547263.jpeg"
         },
         {
@@ -36,5 +38,12 @@ export const data = {
             precio: '5.67',
             imagen: "https://images.pexels.com/photos/1313267/pexels-photo-1313267.jpeg"
         }
-    ]
+    ],
+    fnProductosEnOferta: () => {
+        return data.frutas.filter(p => p.precio < 4);
+    },
+
+    fnProductosImportados: ()=>{
+        return data.frutas.filter(x => x.importado === true);
+    }
 };
