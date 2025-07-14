@@ -1,0 +1,101 @@
+<main class="container">
+  <section class="row">
+    <article class="col col-6 border shadow">
+      <p class="alert alert-primary mt-2">Directivas de atributos</p>
+      <p
+        [style.color]="'green'"
+        [style.background]="'black'"
+        [style.padding]="'20px'"
+        [style.font-size]="'20px'"
+        [style.text-align]="'center'"
+      >
+        Aplicando Style
+      </p>
+
+      <p
+        [style]="{
+          border: '4px solid black',
+          padding: '20px',
+          fontSize: '30px',
+          background: 'green',
+          color: 'yellow',
+          textAlign: 'center'
+        }"
+      >
+        Aplicando stle agrupado
+      </p>
+      <p
+        [ngStyle]="{
+          color: 'red',
+          background: 'yellow',
+          padding: '20px',
+          fontSize: '30px',
+          textAlign: 'center'
+        }"
+      >
+        Aplicando ngStyle por objeto
+      </p>
+
+      <p
+        [ngStyle]="{
+          color: 'blue',
+          background: 'orange',
+          padding: '20px',
+          fontSize: '30px',
+          textAlign: 'center'
+        }"
+      >
+        Numero con ngStyle dinamico desde ts
+      </p>
+
+      @for (x of numeros; track x){
+      <span [ngStyle]="aplicaEstiloNumero(x)"> {{ x }} </span>
+      }
+    </article>
+
+    <article class="col col-6 border shadow">
+      <p class="alert alert-primary my-2">Directiva Atributos ngClass</p>
+      <p
+        [ngClass]="[
+          'lead',
+          'fs-2',
+          'bg-dark',
+          'text-white',
+          'p-2',
+          'text-center'
+        ]"
+      >
+        Usando ngClass por arreglo
+      </p>
+      <p
+        [ngClass]="
+          'lead fs-4 alert alert-success fw-bold shadow border border-3 text-center'
+        "
+      >
+        Usando ngClass por objeto
+      </p>
+      <hr />
+      <h4 class="alert alert-primary my-2 text-center">Lista de tareas</h4>
+      <ul class="list-group">
+        @for(t of tareas; track t.id){
+        <li
+          class="list-group-item mb-2"
+          [ngClass]="{
+            'list-group-item-success tarea-completada':
+              t.estado.toLowerCase() === 'completada',
+            'list-group-item-secondary': t.estado.toLowerCase() === 'pendiente',
+            'list-group-item-warning': t.estado.toLowerCase() === 'en progreso'
+          }"
+        >
+          {{ t.nombre }}
+          <span class="badge bg-secondary float-end">{{ t.estado }}</span>
+        </li>
+        }
+      </ul>
+      <hr />
+      <p [ngClass]="'tarea-completada'" class="alert alert-info">
+        Tarea completada con estilo propio ngClass
+      </p>
+    </article>
+  </section>
+</main>

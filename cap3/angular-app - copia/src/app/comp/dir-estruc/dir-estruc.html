@@ -1,0 +1,136 @@
+<main class="container">
+  <section class="row">
+    <aside class="col col-6">
+      <p
+        style="
+          color: green;
+          background-color: aqua;
+          width: fit-content;
+          padding: 10px;
+        "
+      >
+        Directivas Estructurales:
+      </p>
+      <hr />
+      <p class="alert alert-primary">Condicional if</p>
+      @if (tiempoServicio > 25) {
+      <p class="alert alert-primary">
+        <span
+          >Usted puede jubilarse, Tiempo de servicio: {{ tiempoServicio }}</span
+        >
+      </p>
+      }@else {
+      <p class="alert alert-danger">
+        <span
+          >Usted no puede jubilarse, Tiempo de servicio: {{ tiempoServicio }}
+        </span>
+      </p>
+      }
+      <hr />
+      <div class="col col-6">
+        <div class="card shadow">
+          <div class="card-header bg-dark text-white">
+            <p>Trabajador: {{ trabajador.nombre }}</p>
+            <p>DNI: {{ trabajador.dni }}</p>
+          </div>
+          <div class="card-body">
+            <p>
+              Resultado: {{ fnEvaluaJubilacion(trabajador.tiempoServicio) }}
+            </p>
+            <p>Tiempo de Servicio: {{ trabajador.tiempoServicio }}</p>
+          </div>
+          <div class="card-footer"></div>
+        </div>
+      </div>
+      <hr />
+      <p class="alert alert-primary">For de Frutas:</p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+          <thead class="bg-dark text-white table-dark">
+            <tr class="text-center">
+              <th>Id</th>
+              <th>Fruta</th>
+              <th>Precio</th>
+              <th>Beneficio</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (fruta of frutas; track $index) {
+            <tr class="text-center">
+              <td>{{ $index }}</td>
+              <td>{{ fruta.nombre }}</td>
+              <td>{{ fruta.precio }}</td>
+              <td>{{ fruta.beneficio }}</td>
+              <td>{{ fruta.stock }}</td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </aside>
+    <aside class="col col-6">
+      <p
+        style="
+          color: green;
+          background-color: aqua;
+          width: fit-content;
+          padding: 10px;
+        "
+      >
+        Directivas Estructurales:
+      </p>
+      <hr />
+      <p class="alert alert-primary">Iteracion con for (Cards)</p>
+      <section class="row">
+        @for(x of frutas; track x){
+        <main class="col col-6">
+          <article class="card shadow m-2">
+            <div class="card-header bg-primary text-white">
+              Fruta: {{ x.nombre }}
+            </div>
+            <div class="card-body">Precio: {{ x.precio }}</div>
+            <div class="card-footer bg-success text-white">
+              Beneficios: {{ x.beneficio }}
+            </div>
+          </article>
+        </main>
+        }
+      </section>
+      <hr />
+      <p class="alert alert-success">Activdad de Proyecto</p>
+
+      <button class="btn btn-primary m-2" (click)="avanzarActividad()">
+        Avanzar Actividad
+      </button>
+      <button class="btn btn-danger" (click)="retrocederActividad()">
+        Retroceder Actividad
+      </button>
+
+      @switch (actividad) { @case(1){
+      <p class="lead fs-4 alert alert-primary">Actividad: {{ textoAct1 }}</p>
+      } @case(2){
+      <p class="lead fs-4 alert alert-primary">Actividad: {{ textoAct2 }}</p>
+      } @case(3){
+      <p class="lead fs-4 alert alert-primary">Actividad: {{ textoAct3 }}</p>
+      } @case(4){
+      <p class="lead fs-4 alert alert-primary">Actividad: {{ textoAct4 }}</p>
+      } @case(5){
+      <p class="lead fs-4 alert alert-primary">Actividad: {{ textoAct5 }}</p>
+      } @case(6){
+      <p class="lead fs-4 alert alert-primary">Actividad: {{ textoAct6 }}</p>
+      } @case(7){
+      <p class="lead fs-4 alert alert-primary">Actividad: {{ textoAct7 }}</p>
+      } @case(8){
+      <p class="lead fs-4 alert alert-primary">Actividad: {{ textoAct8 }}</p>
+      } @case(9){
+      <p class="lead fs-4 alert alert-primary">Actividad: {{ textoAct9 }}</p>
+      } @case(10){
+      <p class="lead fs-4 alert alert-primary">Actividad: {{ textoAct10 }}</p>
+      } @default{
+      <p class="lead fs-4 alert alert-primary">Actividad: {{ textoDefault }}</p>
+      } }
+      <hr />
+    </aside>
+  </section>
+</main>

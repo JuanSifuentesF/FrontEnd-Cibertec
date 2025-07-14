@@ -1,0 +1,43 @@
+<main class="container my-5">
+  <section class="row">
+    <div class="col col-12">
+      <p class="text-center alert alert-primary">{{ title }}</p>
+      <hr />
+    </div>
+    <aside class="col col-6">
+      <p class="parrafo">{{ subtitulo }}</p>
+      <hr />
+      <p class="alert alert-primary">{{ tema }}</p>
+      <hr />
+      <p class="alert alert-success">
+        El valor de {{ n3 }} elevado a la {{ n4 }} es : {{ fnElevaXaY(n1, n2) }}
+      </p>
+      <p class="alert alert-danger">
+        1000 dolares en soles es: {{ fnCambioDolaresASoles(1000) }}
+      </p>
+    </aside>
+
+    <aside class="col col-6">
+      <p class="parrafo">{{ tema_interpolacion }}</p>
+      <hr />
+      <p class="alert alert-primary">
+        la suma de {{ n1 }} + {{ n2 }} es : {{ n1 + n2 }}
+      </p>
+      <p class="alert alert-primary">
+        6 la resta de {{ n1 }} + {{ n2 }} es : {{ n1 - n2 }}
+      </p>
+      <p class="alert alert-primary">
+        la multiplicación de {{ n1 }} + {{ n2 }} es : {{ n1 * n2 }}
+      </p>
+      <p class="alert alert-primary">
+        la división de {{ n1 }} + {{ n2 }} es : {{ n1 / n2 }}
+      </p>
+      <p class="alert alert-warning">
+        500 soles en dolares es: {{ fnCambiaSolesADolares(500) }}
+      </p>
+      <p class="alert alert-warning">
+        100 dolares en soles es: {{ fnCambioDolaresASoles(800) }}
+      </p>
+    </aside>
+  </section>
+</main>
