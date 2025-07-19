@@ -1,0 +1,167 @@
+<main class="container">
+  <article class="row ms-3">
+    <p class="lead fs-2">pipe de busqueda</p>
+    <section class="col col-5 border border-2 p-2 me-2">
+      <p class="badge bg-success">Formulario</p>
+      <div class="container bg-light border border-2 p-2 rounded">
+        <label for="" class="badge bg-primary fs-6 my-2">Ingrese nombre</label>
+        <input
+          type="text"
+          class="form-control my-2"
+          placeholder="Ingrese nombre"
+          [(ngModel)]="filtro"
+        />
+      </div>
+    </section>
+    <section class="col col-6 border border-2 p-2 ms-2">
+      <p class="badge bg-success">Resultado:</p>
+      <ul class="list-group">
+        @for(f of frutas | buscar:filtro; track f){
+        <li class="list-group-item bg-light border border-2 my-2">
+          {{ f.nombre | uppercase }}
+          <span class="badge bg-success float-end">{{
+            f.precio | currency
+          }}</span>
+        </li>
+        }
+      </ul>
+    </section>
+  </article>
+  <hr />
+  <article class="row">
+    <h2 class="text-center text-uppercase mb-4">
+      Revision de pipes de angular
+    </h2>
+    <section class="col col-4">
+      <p class="badge bg-primary">Uso de pipe date:</p>
+      <p class="alert alert-primary small">{{ fecha | date }}</p>
+    </section>
+    <section class="col col-4">
+      <p class="badge bg-primary">Uso de pipe date corto</p>
+      <p class="alert alert-primary small">
+        {{ fecha | date : "shortDate" }} {{ fecha | date : "shortTime" }}
+        {{ fecha | date : "dd/MM/yyyy HH:mm:ss Z" }}
+      </p>
+    </section>
+    <section class="col col-4">
+      <p class="badge bg-primary">Uso de pipe date:</p>
+      <p class="alert alert-primary small">{{ fecha | date : "fullDate" }}</p>
+    </section>
+  </article>
+  <hr />
+  <article class="row">
+    <section class="col col-4">
+      <p class="badge bg-primary">Uso de pipe date:</p>
+      <p class="alert alert-primary small">{{ fecha | date }}</p>
+    </section>
+    <section class="col col-4">
+      <p class="badge bg-primary">Uso de pipe date corto</p>
+      <p class="alert alert-primary small">
+        {{ fecha | date : "shortDate" }} {{ fecha | date : "shortTime" }}
+        {{ fecha | date : "dd/MM/yyyy HH:mm:ss Z" }}
+      </p>
+    </section>
+    <section class="col col-4">
+      <p class="badge bg-primary">Uso de pipe date:</p>
+      <p class="alert alert-primary small">{{ fecha | date : "fullDate" }}</p>
+    </section>
+  </article>
+  <hr />
+  <article class="row">
+    <section class="col col-4">
+      <p class="badge bg-primary">
+        Uso de pipe number (por default son 3 decimales):
+      </p>
+      <p class="alert alert-primary small">{{ precio | number }}</p>
+    </section>
+    <section class="col col-4">
+      <p class="badge bg-primary">
+        Uso de pipe number formato entero decimales dos decimales
+      </p>
+      <p class="alert alert-primary small">
+        {{ precio | number : "1.0-2" }}
+      </p>
+    </section>
+    <section class="col col-4">
+      <p class="badge bg-primary">Uso de pipe date:</p>
+      <p class="alert alert-primary small">{{ fecha | date : "fullDate" }}</p>
+    </section>
+  </article>
+  <hr />
+  <article class="row">
+    <section class="col col-4">
+      <p class="badge bg-primary">Pipe uppercase</p>
+      <p class="alert alert-secondary small">
+        {{ direccion | uppercase }}
+      </p>
+    </section>
+    <section class="col col-4">
+      <p class="badge bg-primary">Pipe lowercase</p>
+      <p class="alert alert-secondary small">
+        {{ marca | lowercase }}
+      </p>
+    </section>
+    <section class="col col-4">
+      <p class="badge bg-primary">Pipe titlecase</p>
+      <p class="alert alert-secondary small">{{ marca | titlecase }}</p>
+    </section>
+  </article>
+  <hr />
+  <article class="row">
+    <section class="col col-4">
+      <p class="badge bg-primary">Pipe percent</p>
+      <p class="alert alert-danger small">
+        IGV: {{ IGV | percent }} - sin pipe {{ IGV }}
+      </p>
+    </section>
+    <section class="col col-4">
+      <p class="badge bg-primary">Pipe currency, dolar por default</p>
+      <p class="alert alert-danger small">Dolar: {{ precio | currency }}</p>
+      <p class="badge bg-primary">Pipe currency, Euro</p>
+      <p class="alert alert-danger small">
+        Euro: {{ precio | currency : "EUR" }}
+      </p>
+    </section>
+    <section class="col col-4">
+      <p class="badge bg-primary">Pipe currency (SOLES | PEN)</p>
+      <p class="alert alert-danger small">
+        Soles {{ precio | currency : "PEN" }}
+      </p>
+      <p class="alert alert-danger small">
+        Soles {{ precio | currency : "PEN" : "S/" : "1.2-2" }}
+      </p>
+      <p class="alert alert-danger small">
+        Yenes {{ precio | currency : "JPY" }}
+      </p>
+    </section>
+  </article>
+  <hr />
+  <article class="row">
+    <section class="col col-4">
+      <p class="badge bg-primary">Pipe JSON</p>
+      <p class="alert alert-danger small">
+        {{ usuario | json }}
+      </p>
+    </section>
+    <section class="col col-4">
+      <p class="badge bg-primary">Pipe currency, dolar por default</p>
+      <p class="alert alert-danger small">Dolar: {{ precio | currency }}</p>
+      <p class="badge bg-primary">Pipe currency, Euro</p>
+      <p class="alert alert-danger small">
+        Euro: {{ precio | currency : "EUR" }}
+      </p>
+    </section>
+    <section class="col col-4">
+      <p class="badge bg-primary">Pipe currency (SOLES | PEN)</p>
+      <p class="alert alert-danger small">
+        Soles {{ precio | currency : "PEN" }}
+      </p>
+      <p class="alert alert-danger small">
+        Soles {{ precio | currency : "PEN" : "S/" : "1.2-2" }}
+      </p>
+      <p class="alert alert-danger small">
+        Yenes {{ precio | currency : "JPY" }}
+      </p>
+    </section>
+  </article>
+</main>

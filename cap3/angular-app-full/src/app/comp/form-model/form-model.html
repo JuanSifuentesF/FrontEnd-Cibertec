@@ -1,0 +1,84 @@
+<main class="container">
+  <article class="row">
+    <section class="col col-5 shadow border border-2 my-2 p-2 ms-4">
+      <p class="badge bg-primary">Model Driven Producto</p>
+      <form [formGroup]="form" (ngSubmit)="guardar()">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            class="form-control"
+            formControlName="nombre"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="precio" class="form-label">Precio</label>
+          <input
+            type="number"
+            id="precio"
+            class="form-control"
+            formControlName="precio"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+          {{ form.get("id")?.value ? "Actualizar" : "Registrar" }}
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary ms-2"
+          (click)="limpiar()"
+        >
+          {{ form.get("id")?.value ? "Cancelar" : "Limpiar" }}
+        </button>
+      </form>
+    </section>
+    <section class="col col-5 shadow border border-2 my-2 p-2 ms-4">
+      <p class="badge bg-primary">Productos de la lista</p>
+      <ul class="list-group">
+        @if(form.get('nombre')?.invalid && form.get('nombre')?.touched) {
+        <li class="list-group-item text-danger">
+          El nombre es obligatorio y debe tener al menos 3 caracteres.
+        </li>
+        } @else { @for (p of productos; track p.id) {
+        <li class="list-group-item">
+          {{ p.nombre }} -
+          <span class="badge bg-success">{{
+            p.precio | currency : "PEN "
+          }}</span>
+          <button
+            class="btn btn-danger btn-sm float-end"
+            (click)="eliminar(p.id!)"
+          >
+            Eliminar
+          </button>
+          <button
+            class="btn btn-warning btn-sm float-end me-2"
+            (click)="editar(p)"
+          >
+            Editar
+          </button>
+        </li>
+        } }
+      </ul>
+    </section>
+  </article>
+</main>
+<!--
+<li *ngFor="let producto of productos" class="list-group-item">
+          {{ producto.nombre }} - {{ producto.precio | currency : "PEN " }}
+          <button
+            class="btn btn-danger btn-sm float-end"
+            (click)="eliminar(producto.id!)"
+          >
+            Eliminar
+          </button>
+          <button
+            class="btn btn-warning btn-sm float-end me-2"
+            (click)="editar(producto)"
+          >
+            Editar
+          </button>
+        </li>
+
+-->

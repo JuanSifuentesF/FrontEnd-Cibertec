@@ -1,0 +1,64 @@
+<main class="container">
+  <p class="alert alert-success text-center">form-template works!</p>
+  <article class="row">
+    <section class="col col-6">
+      <p class="alert alert-success">Producto template driven</p>
+      <form #formProd="ngForm" (ngSubmit)="registrar(formProd)">
+        <div class="mb-2">
+          <label class="form-label">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nombre"
+            placeholder="Ingrese nombre"
+            [(ngModel)]="producto.nombre"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Precio</label>
+          <input
+            type="number"
+            class="form-control"
+            name="precio"
+            placeholder="Ingrese precio"
+            [(ngModel)]="producto.precio"
+          />
+        </div>
+        <button type="submit" class="btn btn-success m-2">
+          {{ producto.id ? "Actualizar" : "Registrar" }}
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="reset(formProd)"
+        >
+          {{ producto.id ? "Cancelar" : "Limpiar" }}
+        </button>
+      </form>
+    </section>
+    <section class="col col-6">
+      <p class="alert alert-success text-center">Productos de la lista</p>
+      <ul class="list-group">
+        @for (p of productos; track p.id) {
+        <li class="list-group-item">
+          {{ p.nombre }} - {{ p.precio }}
+          <span
+            class="badge bg-danger float-end ms-2"
+            style="cursor: pointer"
+            (click)="eliminar(p.id!)"
+          >
+            Eliminar
+          </span>
+          <span
+            class="badge bg-warning float-end"
+            style="cursor: pointer"
+            (click)="editar(p)"
+          >
+            Editar
+          </span>
+        </li>
+        }
+      </ul>
+    </section>
+  </article>
+</main>

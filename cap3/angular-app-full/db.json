@@ -1,0 +1,38 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Camiseta",
+      "precio": 19.99,
+      "descripcion": "Camiseta de algodón 100%",
+      "imagen": "https://example.com/camiseta.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Pantalones",
+      "precio": 39.99,
+      "descripcion": "Pantalones vaqueros de corte clásico",
+      "imagen": "https://example.com/pantalones.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "Zapatillas",
+      "precio": 65
+    },
+    {
+      "id": 5,
+      "nombre": "pera",
+      "precio": 3334
+    },
+    {
+      "id": 6,
+      "nombre": "Chaqueta",
+      "precio": 123
+    },
+    {
+      "id": 7,
+      "nombre": "Chaqueta3",
+      "precio": 1234
+    }
+  ]
+}
